@@ -65,7 +65,10 @@ fn held_by(guest: &Guest, hand: Hand) -> (usize, Option<&ItemStack>) {
 impl Game<'_> {
     /// `player_back_mod_menu_slots`: backs `window`'s first container slots with `places`. An
     /// empty list takes the backing away; a slot no longer backed is emptied, so the copy it
-    /// showed never becomes the menu's own storage.
+    /// showed never becomes the menu's own storage. The player may be the one whose turn it is
+    /// (a mod backs its menu where it opens it: `use_item`, `native_menu_clicked`, the player's
+    /// tick): their hands are then the level's, their open menu stays in their record, and the
+    /// mirror's first fill waits for a change notice, taken after the turn.
     pub(super) fn player_back_mod_menu_slots(
         &mut self,
         player: mod_api::PlayerRef,
@@ -76,33 +79,52 @@ impl Game<'_> {
         let guest = self
             .online_player_record(player)
             .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?;
+        // During the player's own turn their hands are swapped into the level in place, and
+        // their record holds what the turn swapped out.
+        let acting = self.lan_acting_uuid == Some(uuid) && !self.lan_acting_fake;
         // The stacks the held places are bound to, as they are now.
         let mut held = [None, None];
         for place in &places {
             if let MenuSlotPlace::HeldItem { hand, .. } = *place {
-                let (index, stack) = held_by(guest, hand);
+                let (index, stack) = match (acting, hand) {
+                    (false, _) => held_by(guest, hand),
+                    (true, Hand::Off) => (40, self.offhand.as_ref()),
+                    (true, _) => (
+                        self.selected,
+                        self.inventory.get(self.selected).and_then(Option::as_ref),
+                    ),
+                };
                 held[usize::from(hand == Hand::Off)] = stack.map(|s| (index, held_identity(s)));
             }
         }
-        let selected = guest.selected;
+        let selected = if acting { self.selected } else { guest.selected };
         let conn = self
             .native_conn(uuid)
             .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?;
-        let (size, slots) = self
+        let (size, slots, shown) = self
             .lan
             .as_ref()
             .and_then(|lan| lan.hub.guest(conn)?.menu.as_ref())
             .filter(|open| open.window == window)
-            .map(|open| (open.size, open.slots))
+            .map(|open| (open.size, open.slots, open.hidden.is_empty()))
             .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?;
         // Only a blockless mod menu's slots are the game's to show (`Slots::Native`); a block's
         // or an entity's menu reads its own storage, which a backing would not replace.
         if slots != Slots::Native {
             return Err(MenuSlotBackRefusal::UnsupportedMenu);
         }
-        let menu = self
-            .menu(uuid, window)
-            .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?;
+        // The menu as mods read it. During the player's turn `menu` refuses them (their state
+        // is swapped out), so the record's open menu above stands for it.
+        let menu = if acting {
+            shown
+                .then_some(None)
+                .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?
+        } else {
+            Some(
+                self.menu(uuid, window)
+                    .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?,
+            )
+        };
         if places.len() > size {
             return Err(MenuSlotBackRefusal::TooManyPlaces);
         }
@@ -135,13 +157,21 @@ impl Game<'_> {
             .as_ref()
             .filter(|old| old.window == window)
             .map_or(0, |old| old.places.len());
+        // During the turn the mirror can't be read, so its first fill is a change notice, taken
+        // after the turn (`run_native_menu_events`) with nobody swapped in.
+        let defer = count > 0 && menu.is_none();
         *entry = (count > 0).then_some(MenuSlotPlaces {
             window,
             places,
             locked,
             held,
-            noticed: false,
+            noticed: defer,
         });
+        if defer {
+            lan.hub
+                .native_menu_events
+                .push(NativeMenuEvent::PlacesChanged { uuid, window });
+        }
         if let Some(index) = lan.hub.guests.connection_index(conn)
             && let Some(shown) = lan.hub.guests.native_menu_mut(index)
         {
@@ -149,7 +179,9 @@ impl Game<'_> {
                 *slot = None;
             }
         }
-        if count > 0 {
+        if count > 0
+            && let Some(menu) = menu
+        {
             self.refresh_menu_places(conn, uuid, menu);
         }
         if before > count
@@ -711,6 +743,39 @@ mod tests {
                 Err(MenuSlotBackRefusal::UnsupportedMenu)
             );
             assert_eq!(game.menu_places_of(1), None);
+        });
+    }
+
+    #[test]
+    #[ignore = "daily"]
+    fn the_player_backs_their_menu_from_their_own_turn() {
+        with_game(|game| {
+            let window = backpack_menu(game);
+            let host: &mut dyn ServerHost = game;
+            let menu = host.menu(123, window).unwrap();
+            let player = menu.fields().player;
+            let stone = ItemPlace::PlayerSlot {
+                player: 123,
+                slot: 9,
+            }
+            .resource(host)
+            .unwrap();
+            let put =
+                host.transaction(|host, tx| Ok::<_, ()>(held_slot(4).insert(host, tx, &stone, 5)));
+            assert_eq!(put, Ok(5));
+            // As a mod's `use_item` backs it: with the player swapped in for their turn.
+            let backed = game.as_guest(1, |game| {
+                game.player_back_mod_menu_slots(player, window, held_places(Hand::Main, 0..27))
+            });
+            assert_eq!(backed, Some(Ok(())));
+            // The mirror is filled after the turn, with the box's contents.
+            game.run_native_menu_events();
+            let guest = game.lan.as_ref().unwrap().hub.guest(1).unwrap();
+            assert_eq!(guest.native_menu[4].as_ref().map(|s| s.count), Some(5));
+            // And the menu's clicks go through the box: the 64 stone fill slot 4 up, the rest slot 0.
+            assert!(game.place_menu_click(123, window, 27, 0, 1));
+            let host: &mut dyn ServerHost = game;
+            assert_eq!((held_slot(4).amount(host), held_slot(0).amount(host)), (64, 5));
         });
     }
 
