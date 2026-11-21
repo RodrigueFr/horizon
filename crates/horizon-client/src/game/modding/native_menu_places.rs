@@ -392,8 +392,8 @@ impl Game<'_> {
     /// done through the places' handlers in one transaction; true when it was answered here,
     /// false to leave it to the mods (`native_menu_clicked`): a click in a menu no mod backed,
     /// on a container slot past the places, outside the menu, or of another kind. Before any
-    /// click on a backed menu a held place's stack must still be the bound one; else the menu
-    /// closes and the click does nothing.
+    /// click on a backed menu every place must still resolve and a held or mod place's stack
+    /// must still be the bound one; else the menu closes and the click does nothing.
     pub(super) fn place_menu_click(
         &mut self,
         uuid: u128,
@@ -421,7 +421,13 @@ impl Game<'_> {
         let Some(menu) = self.menu(uuid, window) else {
             return false;
         };
-        if !self.places_bound(conn, menu.fields().player) {
+        let player = menu.fields().player;
+        let places: Vec<_> = (0..count)
+            .filter_map(|n| self.native_menu_place(conn, window, n))
+            .collect();
+        if !self.places_bound(conn, player)
+            || !places.into_iter().all(|place| place.resolves(self, player))
+        {
             self.forget_menu_places(conn);
             self.close_menu(uuid);
             return true;
@@ -565,9 +571,14 @@ mod tests {
     impl mod_api::Hooks for Backpack {
         fn register(&self, r: &mut dyn mod_api::Registrar, _: &mod_api::RegistrationContext) {
             let item = r.item_key("minecraft:shulker_box");
-            r.item_container(&item, |_: &dyn mod_api::Host| Some(27));
+            r.item_container(&item, |_: &dyn mod_api::Host| Some(BOX_SIZE.get()));
             r.place_provider(BACK, std::sync::Arc::new(BackSlot));
         }
+    }
+
+    std::thread_local! {
+        /// The box's slots, which a test shrinks (a mod's container sized by its own state).
+        static BOX_SIZE: std::cell::Cell<u32> = const { std::cell::Cell::new(27) };
     }
 
     /// An accessory mod's back slots ([`ItemPlace::Mod`]): back slot `key` is kept in the
@@ -954,6 +965,46 @@ mod tests {
             game.run_native_menu_events();
             let host: &mut dyn ServerHost = game;
             assert_eq!(host.menu(123, window), None);
+        });
+    }
+
+    #[test]
+    #[ignore = "daily"]
+    fn a_click_once_a_place_no_longer_resolves_closes_the_menu_and_moves_nothing() {
+        with_game(|game| {
+            let window = backpack_menu(game);
+            edit_guest(game, |g| g.inventory[20] = g.inventory[0].take());
+            let host: &mut dyn ServerHost = game;
+            let menu = host.menu(123, window).unwrap();
+            let player = menu.fields().player;
+            // Menu slot 0 shows the box's slot 1, menu slot 1 its slot 0.
+            let places = [1, 0]
+                .map(|slot| MenuSlotPlace::ModItem {
+                    provider: BACK,
+                    key: 0,
+                    slot,
+                })
+                .to_vec();
+            assert_eq!(
+                game.player_back_mod_menu_slots(player, window, places),
+                Ok(())
+            );
+            // The box shrinks to one slot, the same stack in its place: menu slot 0 names none.
+            BOX_SIZE.set(1);
+            assert!(game.place_menu_click(123, window, 27, 0, 1));
+            BOX_SIZE.set(27);
+            let host: &mut dyn ServerHost = game;
+            assert_eq!(host.menu(123, window), None, "the menu closed");
+            let in_box = ItemPlace::Nested {
+                parent: Box::new(back_slot(0)),
+                slot: 0,
+            };
+            assert_eq!(in_box.amount(host), 0, "nothing went into the box");
+            let carried = ItemPlace::PlayerSlot {
+                player: 123,
+                slot: 9,
+            };
+            assert_eq!(carried.amount(host), 64, "the stone stayed in the inventory");
         });
     }
 }
