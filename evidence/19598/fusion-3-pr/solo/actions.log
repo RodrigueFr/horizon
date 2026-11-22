@@ -1,0 +1,81 @@
+[host] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2851992, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[host] ['open', 'W', 5, 'creative'] -> {"ok": true}
+[host] ['wait-ready', '400'] -> {"block_entities": 44, "border": {"center": [0.0, 0.0], "size": 59999968.0}, "carts": [{"kind": "minecraft:chest_minecart", "position": [-94.5, 28.0625, 45.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-65.5, 28.0625, 56.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-57.5, 29.0625, 87.5], "velocity": [0.0, 0.0, 0.0]}, {"ki...
+[host] ['command', 'time set day'] -> {"chat": ["Set minecraft:overworld to time marker minecraft:day"], "ok": true}
+[host] ['command', 'gamerule spawn_mobs false'] -> {"chat": ["Game rule spawn_mobs is now set to false"], "ok": true}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}], "last": 1, "skipped": 0}
+[host] ['command', 'gamemode survival'] -> {"chat": ["Set own game mode to Survival Mode"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 56}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}], "last": 3, "skipped": 0}
+[host] ['command', 'clear @s'] -> {"chat": ["No items were found on player Player35563"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 66}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}], "last": 
+[host] ['command', 'tp @s ~ 200 ~'] -> {"chat": ["Teleported Player35563 to 3.500000, 200.000000, 8.500000"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 76}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:glass'] -> {"chat": ["Successfully filled 9 block(s)"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 83}
+[host] ['look', 0, -90] -> {"ok": true}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'item replace entity @s inventory.8 with minecraft:shulker_box[container=[{slot:2,item:{id:"minecraft:dirt",count:3}}]]'] -> {"chat": ["Replaced 1 slot(s) on Player35563 with [Shulker Box]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 90}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'item replace entity @s inventory.0 with minecraft:stone 64'] -> {"chat": ["Replaced 1 slot(s) on Player35563 with [Stone]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 96}
+[host] ['select', '1'] -> {"held": null, "ok": true, "selected": 1}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'menuproof back'] -> {"chat": ["menuproof: back menu opened and backed: true"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 102}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 112}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: /menuproof back opened a backed menu: [["menuproof: back menu opened and backed: true"], "container"]
+[worn-solo] PASS single-player: the menu shows the worn box (3 dirt in its slot 2): {"2": ["minecraft:dirt", 3]}
+[host] ['screenshot', '<scratchpad>/out/all-worn-solo/host-single-player-1-opened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['click-slot', 9, 'shift'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 118}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: a shift-click fills the box with the 64 stone: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: the stone left the inventory: null
+[host] ['screenshot', '<scratchpad>/out/all-worn-solo/host-single-player-2-shift-clicked.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['click-slot', 17] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 124}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: a pickup click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-solo] PASS single-player: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-solo] PASS single-player: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[host] ['click-slot', 17, 'shift'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 130}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: a shift click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-solo] PASS single-player: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-solo] PASS single-player: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[host] ['click-slot', 17, 'right'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 135}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-solo] PASS single-player: a right click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-solo] PASS single-player: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-solo] PASS single-player: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[host] ['screenshot', '<scratchpad>/out/all-worn-solo/host-single-player-3-own-slot-clicked.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'menuproof unequip'] -> {"chat": ["menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 142}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 152}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[worn-solo] PASS single-player: removing the box from its place closes the menu: [["menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())"], "playing"]
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 47}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 49}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 53}, {"event": "chat", "seq": 4, "text": "No items were found on player Player35563", "tick": 61}, {"event":
+[host] ['command', 'menuproof show'] -> {"chat": ["menuproof: hand [no box there]; back [no box there]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 158}
+[worn-solo] PASS single-player: the back slot is empty afterwards: ["menuproof: hand [no box there]; back [no box there]"]
+[host] ['inventory'] -> {"armor": [{"item": null, "part": "head", "slot": 500}, {"item": null, "part": "chest", "slot": 501}, {"item": null, "part": "legs", "slot": 502}, {"item": null, "part": "feet", "slot": 503}], "carried": null, "counts": {"minecraft:shulker_box": 1}, "held": null, "hotbar": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "s...
+[worn-solo] PASS single-player: the box, with its contents, is in inventory slot 26: [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:3,id:\"minecraft:dirt\"},slot:2}]}", "count": 1, "item": "minecraft:shulker_box", "slot": 26}]
+[host] ['screenshot', '<scratchpad>/out/all-worn-solo/host-single-player-4-removed.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['quit'] -> {"ok": true}
+{"scenario": "worn-solo", "commit": "6868bdaf8ed4fcb7d736fe85ef5242f3985a5202", "pass": true}

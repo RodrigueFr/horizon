@@ -1,0 +1,8 @@
+[16:11:47] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: opening the Worn box menu; the box holds [2=minecraft:dirt x3]
+[16:11:47] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: window 1 back_mod_menu_slots(Worn x27) = Ok(())
+[16:11:47] [Server thread/INFO]: [menuproof] menuproof: back menu opened and backed: true
+[16:11:47] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [2=minecraft:dirt x3]; menu slots [2=minecraft:dirt x3]
+[16:11:48] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [0=minecraft:stone x64, 2=minecraft:dirt x3]; menu slots [0=minecraft:stone x64, 2=minecraft:dirt x3]
+[16:11:49] [Server thread/INFO]: [menuproof] menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())
+[16:11:49] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Worn); the box holds [no box there]
+[16:11:50] [Server thread/INFO]: [menuproof] menuproof: hand [no box there]; back [no box there]

@@ -1,0 +1,90 @@
+[host] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2764774, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[host] ['open', 'W', 5, 'creative'] -> {"ok": true}
+[host] ['wait-ready', '400'] -> {"block_entities": 44, "border": {"center": [0.0, 0.0], "size": 59999968.0}, "carts": [{"kind": "minecraft:chest_minecart", "position": [-94.5, 28.0625, 45.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-65.5, 28.0625, 56.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-57.5, 29.0625, 87.5], "velocity": [0.0, 0.0, 0.0]}, {"ki...
+[host] ['command', 'time set day'] -> {"chat": ["Set minecraft:overworld to time marker minecraft:day"], "ok": true}
+[host] ['command', 'gamerule spawn_mobs false'] -> {"chat": ["Game rule spawn_mobs is now set to false"], "ok": true}
+[host] ['lan', 'open', 0, 'commands'] -> {"ok": true, "port": 42537}
+[guest] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2766218, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[guest] ['connect', '127.0.0.1:42537', 'Guest'] -> {"ok": true}
+[guest] ['wait-for', 'loaded', '--timeout', 300] -> {"ok": true, "screen": "playing", "waited_seconds": 2.213740207}
+[guest] ['wait', '40'] -> {"ok": true, "ticks": 84}
+[guest] ['events'] -> {"events": [], "last": 0, "skipped": 0}
+[guest] ['command', 'gamemode survival'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 94}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}], "last": 1, "skipped": 0}
+[guest] ['command', 'clear @s'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 105}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}], "last": 2, "skipped": 0}
+[guest] ['command', 'tp @s ~ 200 ~'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 114}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}], "last": 3, "skipped": 0}
+[guest] ['command', 'fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:glass'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 120}
+[guest] ['look', 0, -90] -> {"ok": true}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}, {"event": "chat", "seq": 4, "text": "Successfully filled 9 block(s)", "tick": 115}], "last": 4, "skipped": 
+[guest] ['command', 'item replace entity @s inventory.8 with minecraft:shulker_box[container=[{slot:2,item:{id:"minecraft:dirt",count:3}}]]'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 126}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}, {"event": "chat", "seq": 4, "text": "Successfully filled 9 block(s)", "tick": 115}, {"event": "chat", "seq"
+[guest] ['command', 'item replace entity @s inventory.0 with minecraft:stone 64'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 131}
+[guest] ['select', '1'] -> {"held": null, "ok": true, "selected": 1}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}, {"event": "chat", "seq": 4, "text": "Successfully filled 9 block(s)", "tick": 115}, {"event": "chat", "seq"
+[guest] ['command', 'menuproof back'] -> {"ok": true}
+[guest] ['wait-for', 'chat', 'menuproof: back menu opened and backed: true', '--timeout', 10, '--since', 8] -> {"ok": true, "screen": "container", "waited_seconds": 0.054721544}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 138}
+[guest] ['wait', '10'] -> {"ok": true, "ticks": 148}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: /menuproof back opened a backed menu: [["(wait-for chat) menuproof: back menu opened and backed: true"], "container"]
+[worn-lan] PASS lan-guest: the menu shows the worn box (3 dirt in its slot 2): {"2": ["minecraft:dirt", 3]}
+[guest] ['screenshot', '<scratchpad>/out/19598-worn-lan/guest-lan-guest-1-opened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['click-slot', 9, 'shift'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 154}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: a shift-click fills the box with the 64 stone: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: the stone left the inventory: null
+[guest] ['screenshot', '<scratchpad>/out/19598-worn-lan/guest-lan-guest-2-shift-clicked.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['click-slot', 17] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 161}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: a pickup click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-lan] PASS lan-guest: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-lan] PASS lan-guest: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[guest] ['click-slot', 17, 'shift'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 167}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: a shift click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-lan] PASS lan-guest: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-lan] PASS lan-guest: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[guest] ['click-slot', 17, 'right'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 173}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "slot":...
+[worn-lan] PASS lan-guest: a right click on the box's own slot does nothing: the box stays in slot 17: ["minecraft:shulker_box", 1]
+[worn-lan] PASS lan-guest: ... the cursor stays empty and the menu open: [null, "container"]
+[worn-lan] PASS lan-guest: ... and the box keeps its contents: {"0": ["minecraft:stone", 64], "2": ["minecraft:dirt", 3]}
+[guest] ['screenshot', '<scratchpad>/out/19598-worn-lan/guest-lan-guest-3-own-slot-clicked.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}, {"event": "chat", "seq": 4, "text": "Successfully filled 9 block(s)", "tick": 115}, {"event": "chat", "seq"
+[guest] ['command', 'menuproof unequip'] -> {"ok": true}
+[guest] ['wait-for', 'chat', 'inventory slot 26: Ok(())', '--timeout', 10, '--since', 13] -> {"ok": true, "screen": "playing", "waited_seconds": 0.06019738}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 181}
+[guest] ['wait', '10'] -> {"ok": true, "ticks": 191}
+[guest] ['screen'] -> {"buttons": [], "screen": "playing"}
+[worn-lan] PASS lan-guest: removing the box from its place closes the menu: [["(wait-for chat) inventory slot 26: Ok(())"], "playing"]
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set own game mode to Survival Mode", "tick": 91}, {"event": "chat", "seq": 2, "text": "No items were found on player Guest", "tick": 100}, {"event": "chat", "seq": 3, "text": "Teleported Guest to 9.500000, 200.000000, 10.500000", "tick": 111}, {"event": "chat", "seq": 4, "text": "Successfully filled 9 block(s)", "tick": 115}, {"event": "chat", "seq"
+[guest] ['command', 'menuproof show'] -> {"ok": true}
+[guest] ['wait-for', 'chat', 'back [no box there]', '--timeout', 10, '--since', 15] -> {"ok": true, "screen": "playing", "waited_seconds": 0.012229269}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 197}
+[worn-lan] PASS lan-guest: the back slot is empty afterwards: ["(wait-for chat) back [no box there]"]
+[guest] ['inventory'] -> {"armor": [{"item": null, "part": "head", "slot": 500}, {"item": null, "part": "chest", "slot": 501}, {"item": null, "part": "legs", "slot": 502}, {"item": null, "part": "feet", "slot": 503}], "carried": null, "counts": {"minecraft:shulker_box": 1}, "held": null, "hotbar": [{"item": null, "slot": 0}, {"item": null, "slot": 1}, {"item": null, "slot": 2}, {"item": null, "slot": 3}, {"item": null, "s...
+[worn-lan] PASS lan-guest: the box, with its contents, is in inventory slot 26: [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:3,id:\"minecraft:dirt\"},slot:2}]}", "count": 1, "item": "minecraft:shulker_box", "slot": 26}]
+[guest] ['screenshot', '<scratchpad>/out/19598-worn-lan/guest-lan-guest-4-removed.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['quit'] -> {"ok": true}
+[host] ['quit'] -> {"ok": true}
+{"scenario": "worn-lan", "commit": "3fba8b7aa1324e7e08a9f4f2e4c7e8e2f4df81fd", "pass": true}

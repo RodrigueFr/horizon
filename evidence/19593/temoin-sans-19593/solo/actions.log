@@ -1,0 +1,53 @@
+[host] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2770145, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[host] ['open', 'W', 5, 'creative'] -> {"ok": true}
+[host] ['wait-ready', '400'] -> {"block_entities": 44, "border": {"center": [0.0, 0.0], "size": 59999968.0}, "carts": [{"kind": "minecraft:chest_minecart", "position": [-94.5, 28.0625, 45.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-65.5, 28.0625, 56.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-57.5, 29.0625, 87.5], "velocity": [0.0, 0.0, 0.0]}, {"ki...
+[host] ['command', 'time set day'] -> {"chat": ["Set minecraft:overworld to time marker minecraft:day"], "ok": true}
+[host] ['command', 'gamerule spawn_mobs false'] -> {"chat": ["Game rule spawn_mobs is now set to false"], "ok": true}
+[host] ['events'] -> {"events": [], "last": 0, "skipped": 0}
+[host] ['command', 'gamemode survival'] -> {"chat": ["Set own game mode to Survival Mode"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 108}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}], "last": 3, "skipped": 0}
+[host] ['command', 'clear @s'] -> {"chat": ["No items were found on player Player04716"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 119}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}, {"event": "chat", "seq": 4, "text": "No items were found on player Player04716", "tick": 114}], "last"
+[host] ['command', 'tp @s ~ 200 ~'] -> {"chat": ["Teleported Player04716 to -2.500000, 200.000000, 7.500000"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 129}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}, {"event": "chat", "seq": 4, "text": "No items were found on player Player04716", "tick": 114}, {"event
+[host] ['command', 'fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:glass'] -> {"chat": ["Successfully filled 9 block(s)"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 135}
+[host] ['look', 0, -90] -> {"ok": true}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}, {"event": "chat", "seq": 4, "text": "No items were found on player Player04716", "tick": 114}, {"event
+[host] ['command', 'item replace entity @s hotbar.0 with minecraft:shulker_box[container=[{slot:4,item:{id:"minecraft:dirt",count:5}}]]'] -> {"chat": ["Replaced 1 slot(s) on Player04716 with [Shulker Box]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 142}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}, {"event": "chat", "seq": 4, "text": "No items were found on player Player04716", "tick": 114}, {"event
+[host] ['command', 'item replace entity @s inventory.0 with minecraft:stone 64'] -> {"chat": ["Replaced 1 slot(s) on Player04716 with [Stone]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 147}
+[host] ['select', '1'] -> {"held": {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4}]}", "count": 1, "item": "minecraft:shulker_box"}, "ok": true, "selected": 1}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 152}
+[host] ['use-item'] -> {"block": null, "block_before": null, "changed": false, "inventory_change": {}, "ok": true, "screen": "playing"}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 164}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[held-solo] FAIL single-player: the menu opened from use_item: "playing"
+[held-solo] FAIL single-player: after the turn the menu shows the box (5 dirt in its slot 4): {}
+[host] ['screenshot', '<scratchpad>/out/19598-held-solo/host-single-player-1-opened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['click-slot', 9, 'shift'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 170}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[held-solo] FAIL single-player: a shift-click moves the 64 stone into the box: {}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[held-solo] PASS single-player: the stone left the inventory: null
+[host] ['click-slot', 300] -> {"ok": true}
+[host] ['wait', '3'] -> {"ok": true, "ticks": 173}
+[host] ['click-slot', 309] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 178}
+[host] ['screen'] -> {"buttons": [], "screen": "playing"}
+[held-solo] FAIL single-player: a pickup click moves the stone on to the box's slot 9: {}
+[held-solo] PASS single-player: the cursor is empty: null
+[host] ['screenshot', '<scratchpad>/out/19598-held-solo/host-single-player-2-after-clicks.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 98}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 98}, {"event": "chat", "seq": 3, "text": "Set own game mode to Survival Mode", "tick": 102}, {"event": "chat", "seq": 4, "text": "No items were found on player Player04716", "tick": 114}, {"event
+[host] ['command', 'menuproof show'] -> {"chat": ["menuproof: hand [4=minecraft:dirt x5]; back [no box there]"], "ok": true}
+[host] ['wait-for', 'chat', 'menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]', '--timeout', 10, '--since', 30] -> {"error": "timed out after 10 s; the screen is playing", "kind": "timeout"}
+[held-solo] FAIL the scenario ran to its end: "Failed(\"wait-for chat menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64] --timeout 10 --since 30: {'error': 'timed out after 10 s; the screen is playing', 'kind': 'timeout'}\")"
+[host] ['quit'] -> {"ok": true}
+{"scenario": "held-solo", "commit": "3fba8b7aa1324e7e08a9f4f2e4c7e8e2f4df81fd", "pass": false}

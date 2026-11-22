@@ -1,0 +1,49 @@
+[16:04:43] [Render thread/INFO]: Horizon 0.1.0
+[16:04:43] [Render thread/INFO]: Horizon: content from 1 mod(s) in <scratch>/.horizon-cache/mod-content/ca6438c6c62f9549
+[16:04:43] [Render thread/WARN]: Horizon: ignoring minecraft:ambient_entity_effect: no such vanilla particle in this version
+[16:04:43] [load-render/INFO]: Horizon: block sprites: 1301 layers at 64 px (largest 64 px, budget 256 MiB)
+[16:04:43] [Render thread/INFO]: load core tables: 0.39s
+[16:04:43] [Render thread/INFO]: load pack tables: 0.49s
+[16:04:43] [load-items/INFO]: load items: 0.58s
+[16:04:43] [Render thread/INFO]: Horizon: resources loaded in 0.7s; 35723 block states, 1658 items, 67 biomes; 11 worker threads
+[16:04:43] [Render thread/WARN]: Horizon: no sounds in the active resources; prepare the game again in the launcher (or run horizon-prepare sounds)
+[16:04:43] [Render thread/WARN]: Horizon: no sound: audio off: HORIZON_NO_AUDIO is set
+[16:04:43] [Render thread/INFO]: Horizon: control socket <scratch>/c.sock
+[16:04:43] [Render thread/INFO]: Horizon renderer: asking Vulkan for a graphics device
+[16:04:43] [Render thread/WARN]: Horizon renderer: Vulkan has no conformant adapter (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits))); asking again for the ones wgpu hides as non-conformant
+[16:04:43] [Render thread/WARN]: Horizon renderer: trying OpenGL (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)))
+[16:04:43] [Render thread/WARN]: Horizon renderer: OpenGL has no conformant adapter (OpenGL: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits))); asking again for the ones wgpu hides as non-conformant
+[16:04:43] [Render thread/INFO]: Horizon renderer: asking Vulkan for a graphics device
+[16:04:43] [Render thread/INFO]: Horizon renderer: llvmpipe (LLVM 20.1.2, 256 bits) (Vulkan, Cpu)
+[16:04:43] [Render thread/INFO]: Horizon renderer: requesting the device (driver llvmpipe Mesa 25.2.8-0ubuntu0.24.04.4 (LLVM 20.1.2)) with features [TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | PIPELINE_STATISTICS_QUERY | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | MULTI_DRAW_INDIRECT_COUNT | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | TEXTURE_ATOMIC | SHADER_EARLY_DEPTH_TEST | SUBGROUP | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | RG11B10UFLOAT_RENDERABLE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE] and the adapter's limits (buffers up to 2147483647 bytes, storage bindings up to 134217728 bytes, 2048 texture layers)
+[16:04:43] [Render thread/WARN]: Horizon renderer: the chosen graphics API gave no GPU (No Vulkan or OpenGL graphics driver found: Horizon needs the Vulkan loader (libvulkan.so.1) and a Vulkan driver for your GPU (Mesa's, or NVIDIA's), or OpenGL through EGL (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)); OpenGL: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)))); rendering on the CPU, which is slow
+[16:04:43] [Render thread/INFO]: Horizon renderer: creating the pipelines
+[16:04:44] [Render thread/INFO]: Horizon renderer: pipelines ready (multi-draw on, occlusion culling off, GPU culling unavailable, GPU timer on)
+[16:04:44] [Server thread/INFO]: Starting integrated minecraft server version 26.3
+[16:04:44] [Server thread/INFO]: Horizon: the server thread is pinned to CPUs [0, 1]
+[16:04:44] [World data preload/INFO]: Horizon: worldgen data loaded in 208.125787ms
+[16:04:44] [World initialization/INFO]: Horizon: live features ready in 239.994692ms
+[16:04:44] [Render thread/INFO]: Horizon renderer: acquiring the first frame
+[16:04:45] [Render thread/INFO]: Horizon renderer: submitting the first frame
+[16:04:45] [Render thread/INFO]: Horizon: first frame after 1176 ms
+[16:04:48] [Render thread/INFO]: [CHAT] Set minecraft:overworld to time marker minecraft:day
+[16:04:48] [Render thread/INFO]: [CHAT] Game rule spawn_mobs is now set to false
+[16:04:48] [Render thread/INFO]: [CHAT] Set own game mode to Survival Mode
+[16:04:49] [Render thread/INFO]: [CHAT] No items were found on player Player76133
+[16:04:49] [Render thread/INFO]: [CHAT] Teleported Player76133 to 3.500000, 200.000000, 1.500000
+[16:04:50] [Render thread/INFO]: [CHAT] Successfully filled 9 block(s)
+[16:04:50] [Render thread/INFO]: [CHAT] Replaced 1 slot(s) on Player76133 with [Shulker Box]
+[16:04:50] [Render thread/INFO]: [CHAT] Replaced 1 slot(s) on Player76133 with [Stone]
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: opening the Worn box menu; the box holds [2=minecraft:dirt x3]
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: window 1 back_mod_menu_slots(Worn x27) = Err(NoPlayerOrWindow)
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: refused inside the turn; backing window 1 again after the tick
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: back menu opened and backed: true
+[16:04:51] [Render thread/INFO]: [CHAT] menuproof: back menu opened and backed: true
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after the tick: window 1 back_mod_menu_slots(Worn x27) = Some(Ok(()))
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [2=minecraft:dirt x3]; menu slots [2=minecraft:dirt x3]
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [0=minecraft:stone x64, 2=minecraft:dirt x3]; menu slots [0=minecraft:stone x64, 2=minecraft:dirt x3]
+[16:04:52] [Server thread/INFO]: [menuproof] menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())
+[16:04:52] [Render thread/INFO]: [CHAT] menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())
+[16:04:52] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Worn); the box holds [no box there]
+[16:04:53] [Server thread/INFO]: [menuproof] menuproof: hand [no box there]; back [no box there]
+[16:04:53] [Render thread/INFO]: [CHAT] menuproof: hand [no box there]; back [no box there]

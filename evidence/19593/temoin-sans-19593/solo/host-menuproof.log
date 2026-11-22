@@ -1,0 +1,5 @@
+[16:05:26] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5]
+[16:05:26] [Server thread/INFO]: [menuproof] menuproof: use_item: window 1 back_mod_menu_slots(Held x27) = Err(NoPlayerOrWindow)
+[16:05:26] [Server thread/INFO]: [menuproof] menuproof: use_item: menu closed, not backed
+[16:05:27] [Server thread/INFO]: [menuproof] menuproof: hand [4=minecraft:dirt x5]; back [no box there]
+[16:05:27] [Render thread/INFO]: [CHAT] menuproof: hand [4=minecraft:dirt x5]; back [no box there]

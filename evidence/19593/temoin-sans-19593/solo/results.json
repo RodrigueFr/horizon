@@ -1,0 +1,44 @@
+{
+  "scenario": "held-solo",
+  "tree": "<horizon>/wt-preuves-19598",
+  "commit": "3fba8b7aa1324e7e08a9f4f2e4c7e8e2f4df81fd",
+  "seconds": 22,
+  "pass": false,
+  "checks": [
+    {
+      "check": "single-player: the menu opened from use_item",
+      "pass": false,
+      "seen": "playing"
+    },
+    {
+      "check": "single-player: after the turn the menu shows the box (5 dirt in its slot 4)",
+      "pass": false,
+      "seen": {}
+    },
+    {
+      "check": "single-player: a shift-click moves the 64 stone into the box",
+      "pass": false,
+      "seen": {}
+    },
+    {
+      "check": "single-player: the stone left the inventory",
+      "pass": true,
+      "seen": null
+    },
+    {
+      "check": "single-player: a pickup click moves the stone on to the box's slot 9",
+      "pass": false,
+      "seen": {}
+    },
+    {
+      "check": "single-player: the cursor is empty",
+      "pass": true,
+      "seen": null
+    },
+    {
+      "check": "the scenario ran to its end",
+      "pass": false,
+      "seen": "Failed(\"wait-for chat menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64] --timeout 10 --since 30: {'error': 'timed out after 10 s; the screen is playing', 'kind': 'timeout'}\")"
+    }
+  ]
+}

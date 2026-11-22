@@ -1,0 +1,128 @@
+[host] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2845662, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[host] ['open', 'W', 5, 'creative'] -> {"ok": true}
+[host] ['wait-ready', '400'] -> {"block_entities": 50, "border": {"center": [0.0, 0.0], "size": 59999968.0}, "carts": [{"kind": "minecraft:chest_minecart", "position": [-94.5, 28.0625, 45.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-65.5, 28.0625, 56.5], "velocity": [0.0, 0.0, 0.0]}, {"kind": "minecraft:chest_minecart", "position": [-57.5, 29.0625, 87.5], "velocity": [0.0, 0.0, 0.0]}, {"ki...
+[host] ['command', 'time set day'] -> {"chat": ["Set minecraft:overworld to time marker minecraft:day"], "ok": true}
+[host] ['command', 'gamerule spawn_mobs false'] -> {"chat": ["Game rule spawn_mobs is now set to false"], "ok": true}
+[host] ['lan', 'open', 0, 'commands'] -> {"ok": true, "port": 40899}
+[guest] ['launch', '--game', PosixPath('<scratch>/horizon-client'), '--offscreen', '--no-pause'] -> {"game": "<scratch>/horizon-client", "home": null, "log": "<scratch>/c.log", "ok": true, "pid": 2847261, "resources": null, "socket": "<scratch>/c.sock", "source": "--game", "version": null}
+[guest] ['connect', '127.0.0.1:40899', 'Guest'] -> {"ok": true}
+[guest] ['wait-for', 'loaded', '--timeout', 300] -> {"ok": true, "screen": "playing", "waited_seconds": 0.903524884}
+[guest] ['wait', '40'] -> {"ok": true, "ticks": 58}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}], "last"
+[host] ['command', 'gamemode survival'] -> {"chat": ["Set own game mode to Survival Mode"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 192}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'clear @s'] -> {"chat": ["No items were found on player Player92491"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 203}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'tp @s ~ 200 ~'] -> {"chat": ["Teleported Player92491 to -2.500000, 200.000000, -5.500000"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 214}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:glass'] -> {"chat": ["Successfully filled 9 block(s)"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 220}
+[host] ['look', 0, -90] -> {"ok": true}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'item replace entity @s hotbar.0 with minecraft:shulker_box[container=[{slot:4,item:{id:"minecraft:dirt",count:5}}]]'] -> {"chat": ["Replaced 1 slot(s) on Player92491 with [Shulker Box]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 227}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'item replace entity @s inventory.0 with minecraft:stone 64'] -> {"chat": ["Replaced 1 slot(s) on Player92491 with [Stone]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 233}
+[host] ['select', '1'] -> {"held": {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4}]}", "count": 1, "item": "minecraft:shulker_box"}, "ok": true, "selected": 1}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 238}
+[host] ['use-item'] -> {"block": null, "block_before": null, "changed": false, "inventory_change": {}, "ok": true, "screen": "container"}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 250}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4}]}", "count": 1, "item": "minecraft:shulker...
+[held-lan] PASS lan-host: the menu opened from use_item: "container"
+[held-lan] PASS lan-host: after the turn the menu shows the box (5 dirt in its slot 4): {"4": ["minecraft:dirt", 5]}
+[host] ['screenshot', '<scratchpad>/out/all-held-lan/host-lan-host-1-opened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['click-slot', 9, 'shift'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 256}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[held-lan] PASS lan-host: a shift-click moves the 64 stone into the box: {"0": ["minecraft:stone", 64], "4": ["minecraft:dirt", 5]}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[held-lan] PASS lan-host: the stone left the inventory: null
+[host] ['click-slot', 300] -> {"ok": true}
+[host] ['wait', '3'] -> {"ok": true, "ticks": 260}
+[host] ['click-slot', 309] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 265}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},sl...
+[held-lan] PASS lan-host: a pickup click moves the stone on to the box's slot 9: {"4": ["minecraft:dirt", 5], "9": ["minecraft:stone", 64]}
+[held-lan] PASS lan-host: the cursor is empty: null
+[host] ['screenshot', '<scratchpad>/out/all-held-lan/host-lan-host-2-after-clicks.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "Set minecraft:overworld to time marker minecraft:day", "tick": 87}, {"event": "chat", "seq": 2, "text": "Game rule spawn_mobs is now set to false", "tick": 89}, {"event": "chat", "seq": 3, "text": "This world is now open to LAN. The port number is 40899", "tick": 89}, {"event": "chat", "seq": 4, "text": "Guest joined the game", "tick": 126}, {"event
+[host] ['command', 'menuproof show'] -> {"chat": ["menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]"], "ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 272}
+[held-lan] PASS lan-host: the server's box holds it (menuproof show): ["menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]"]
+[host] ['close'] -> {"ok": true}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 282}
+[host] ['inventory'] -> {"armor": [{"item": null, "part": "head", "slot": 500}, {"item": null, "part": "chest", "slot": 501}, {"item": null, "part": "legs", "slot": 502}, {"item": null, "part": "feet", "slot": 503}], "carried": null, "counts": {"minecraft:shulker_box": 1}, "held": {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},slot:9}]}", "c...
+[held-lan] PASS lan-host: closed, the box is still in the hand: {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},slot:9}]}", "count": 1, "item": "minecraft:shulker_box", "slot": 0}
+[host] ['use-item'] -> {"block": null, "block_before": null, "changed": false, "inventory_change": {}, "ok": true, "screen": "container"}
+[host] ['wait', '10'] -> {"ok": true, "ticks": 294}
+[host] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},sl...
+[held-lan] PASS lan-host: reopened, the box kept the stone and the dirt: {"4": ["minecraft:dirt", 5], "9": ["minecraft:stone", 64]}
+[host] ['screenshot', '<scratchpad>/out/all-held-lan/host-lan-host-3-reopened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[host] ['close'] -> {"ok": true}
+[host] ['wait', '5'] -> {"ok": true, "ticks": 300}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'gamemode survival'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 185}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'clear @s'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 195}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'tp @s ~ 200 ~'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 205}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:glass'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 211}
+[guest] ['look', 0, -90] -> {"ok": true}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'item replace entity @s hotbar.0 with minecraft:shulker_box[container=[{slot:4,item:{id:"minecraft:dirt",count:5}}]]'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 217}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'item replace entity @s inventory.0 with minecraft:stone 64'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 222}
+[guest] ['select', '1'] -> {"held": {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4}]}", "count": 1, "item": "minecraft:shulker_box"}, "ok": true, "selected": 1}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 227}
+[guest] ['use-item'] -> {"block": null, "block_before": null, "changed": false, "inventory_change": {}, "ok": true, "screen": "container"}
+[guest] ['wait', '10'] -> {"ok": true, "ticks": 239}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4}]}", "count": 1, "item": "minecraft:shulker...
+[held-lan] PASS lan-guest: the menu opened from use_item: "container"
+[held-lan] PASS lan-guest: after the turn the menu shows the box (5 dirt in its slot 4): {"4": ["minecraft:dirt", 5]}
+[guest] ['screenshot', '<scratchpad>/out/all-held-lan/guest-lan-guest-1-opened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['click-slot', 9, 'shift'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 245}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[held-lan] PASS lan-guest: a shift-click moves the 64 stone into the box: {"0": ["minecraft:stone", 64], "4": ["minecraft:dirt", 5]}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:5,id:\"minecraft:dirt\"},sl...
+[held-lan] PASS lan-guest: the stone left the inventory: null
+[guest] ['click-slot', 300] -> {"ok": true}
+[guest] ['wait', '3'] -> {"ok": true, "ticks": 249}
+[guest] ['click-slot', 309] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 254}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},sl...
+[held-lan] PASS lan-guest: a pickup click moves the stone on to the box's slot 9: {"4": ["minecraft:dirt", 5], "9": ["minecraft:stone", 64]}
+[held-lan] PASS lan-guest: the cursor is empty: null
+[guest] ['screenshot', '<scratchpad>/out/all-held-lan/guest-lan-guest-2-after-clicks.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['events'] -> {"events": [{"event": "chat", "seq": 1, "text": "[Player92491: Set own game mode to Survival Mode]", "tick": 64}, {"event": "chat", "seq": 2, "text": "[Player92491: Teleported Player92491 to -2.500000, 200.000000, -5.500000]", "tick": 87}, {"event": "chat", "seq": 3, "text": "[Player92491: Successfully filled 9 block(s)]", "tick": 92}, {"event": "chat", "seq": 4, "text": "[Player92491: Replaced 1 
+[guest] ['command', 'menuproof show'] -> {"ok": true}
+[guest] ['wait-for', 'chat', 'menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]', '--timeout', 10, '--since', 17] -> {"ok": true, "screen": "container", "waited_seconds": 0.051077353}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 261}
+[held-lan] PASS lan-guest: the server's box holds it (menuproof show): ["(wait-for chat) menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]"]
+[guest] ['close'] -> {"ok": true}
+[guest] ['wait', '10'] -> {"ok": true, "ticks": 271}
+[guest] ['inventory'] -> {"armor": [{"item": null, "part": "head", "slot": 500}, {"item": null, "part": "chest", "slot": 501}, {"item": null, "part": "legs", "slot": 502}, {"item": null, "part": "feet", "slot": 503}], "carried": null, "counts": {"minecraft:shulker_box": 1}, "held": {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},slot:9}]}", "c...
+[held-lan] PASS lan-guest: closed, the box is still in the hand: {"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},slot:9}]}", "count": 1, "item": "minecraft:shulker_box", "slot": 0}
+[guest] ['use-item'] -> {"block": null, "block_before": null, "changed": false, "inventory_change": {}, "ok": true, "screen": "container"}
+[guest] ['wait', '10'] -> {"ok": true, "ticks": 283}
+[guest] ['screen'] -> {"buttons": [], "carried": null, "container": [-2147483648, 0, 0], "craft_size": 2, "screen": "container", "slot_ids": "0-8 hotbar, 9-35 inventory, 100+ crafting grid (row-major), 200 crafting result, 300+ container, 500-503 armor, 504 offhand, 600+ station", "slots": [{"components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},sl...
+[held-lan] PASS lan-guest: reopened, the box kept the stone and the dirt: {"4": ["minecraft:dirt", 5], "9": ["minecraft:stone", 64]}
+[guest] ['screenshot', '<scratchpad>/out/all-held-lan/guest-lan-guest-3-reopened.png'] -> {"height": 720, "ok": true, "width": 1280}
+[guest] ['close'] -> {"ok": true}
+[guest] ['wait', '5'] -> {"ok": true, "ticks": 289}
+[guest] ['quit'] -> {"ok": true}
+[host] ['quit'] -> {"ok": true}
+{"scenario": "held-lan", "commit": "6868bdaf8ed4fcb7d736fe85ef5242f3985a5202", "pass": true}

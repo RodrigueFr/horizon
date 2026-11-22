@@ -1,0 +1,70 @@
+[15:59:13] [Render thread/INFO]: Horizon 0.1.0
+[15:59:13] [Render thread/INFO]: Horizon: content from 1 mod(s) in <scratch>/.horizon-cache/mod-content/72903f1c4fdd294a
+[15:59:13] [Render thread/WARN]: Horizon: ignoring minecraft:ambient_entity_effect: no such vanilla particle in this version
+[15:59:13] [load-render/INFO]: Horizon: block sprites: 1301 layers at 64 px (largest 64 px, budget 256 MiB)
+[15:59:13] [Render thread/INFO]: load core tables: 0.42s
+[15:59:13] [Render thread/INFO]: load pack tables: 0.52s
+[15:59:13] [load-items/INFO]: load items: 0.61s
+[15:59:14] [Render thread/INFO]: Horizon: resources loaded in 0.7s; 35723 block states, 1658 items, 67 biomes; 11 worker threads
+[15:59:14] [Render thread/WARN]: Horizon: no sounds in the active resources; prepare the game again in the launcher (or run horizon-prepare sounds)
+[15:59:14] [Render thread/WARN]: Horizon: no sound: audio off: HORIZON_NO_AUDIO is set
+[15:59:14] [Render thread/INFO]: Horizon: control socket <scratch>/c.sock
+[15:59:14] [Render thread/INFO]: Horizon renderer: asking Vulkan for a graphics device
+[15:59:14] [Render thread/WARN]: Horizon renderer: Vulkan has no conformant adapter (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits))); asking again for the ones wgpu hides as non-conformant
+[15:59:14] [Render thread/WARN]: Horizon renderer: trying OpenGL (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)))
+[15:59:14] [Render thread/WARN]: Horizon renderer: OpenGL has no conformant adapter (OpenGL: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits))); asking again for the ones wgpu hides as non-conformant
+[15:59:14] [Render thread/INFO]: Horizon renderer: asking Vulkan for a graphics device
+[15:59:14] [Render thread/INFO]: Horizon renderer: llvmpipe (LLVM 20.1.2, 256 bits) (Vulkan, Cpu)
+[15:59:14] [Render thread/INFO]: Horizon renderer: requesting the device (driver llvmpipe Mesa 25.2.8-0ubuntu0.24.04.4 (LLVM 20.1.2)) with features [TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | PIPELINE_STATISTICS_QUERY | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | MULTI_DRAW_INDIRECT_COUNT | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | TEXTURE_ATOMIC | SHADER_EARLY_DEPTH_TEST | SUBGROUP | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | RG11B10UFLOAT_RENDERABLE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE] and the adapter's limits (buffers up to 2147483647 bytes, storage bindings up to 134217728 bytes, 2048 texture layers)
+[15:59:14] [Render thread/WARN]: Horizon renderer: the chosen graphics API gave no GPU (No Vulkan or OpenGL graphics driver found: Horizon needs the Vulkan loader (libvulkan.so.1) and a Vulkan driver for your GPU (Mesa's, or NVIDIA's), or OpenGL through EGL (Vulkan: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)); OpenGL: only a software adapter (llvmpipe (LLVM 20.1.2, 256 bits)))); rendering on the CPU, which is slow
+[15:59:14] [Render thread/INFO]: Horizon renderer: creating the pipelines
+[15:59:14] [Render thread/INFO]: Horizon renderer: pipelines ready (multi-draw on, occlusion culling off, GPU culling unavailable, GPU timer on)
+[15:59:14] [Server thread/INFO]: Starting integrated minecraft server version 26.3
+[15:59:14] [Server thread/INFO]: Horizon: the server thread is pinned to CPUs [0, 1]
+[15:59:14] [World data preload/INFO]: Horizon: worldgen data loaded in 205.778091ms
+[15:59:14] [World initialization/INFO]: Horizon: live features ready in 235.778844ms
+[15:59:15] [Render thread/INFO]: Horizon renderer: acquiring the first frame
+[15:59:15] [Render thread/INFO]: Horizon renderer: submitting the first frame
+[15:59:15] [Render thread/INFO]: Horizon: first frame after 1155 ms
+[15:59:19] [Render thread/INFO]: [CHAT] Set minecraft:overworld to time marker minecraft:day
+[15:59:19] [Render thread/INFO]: [CHAT] Game rule spawn_mobs is now set to false
+[15:59:19] [Server thread/INFO]: Published LAN server on port 46713
+[15:59:19] [Render thread/INFO]: [CHAT] This world is now open to LAN. The port number is 46713
+[15:59:21] [Render thread/INFO]: [CHAT] Guest joined the game
+[15:59:24] [Render thread/INFO]: [CHAT] Set own game mode to Survival Mode
+[15:59:25] [Render thread/INFO]: [CHAT] No items were found on player Player30386
+[15:59:25] [Render thread/INFO]: [CHAT] Teleported Player30386 to 7.500000, 200.000000, -2.500000
+[15:59:26] [Render thread/INFO]: [CHAT] Successfully filled 9 block(s)
+[15:59:26] [Render thread/INFO]: [CHAT] Replaced 1 slot(s) on Player30386 with [Shulker Box]
+[15:59:26] [Render thread/INFO]: [CHAT] Replaced 1 slot(s) on Player30386 with [Stone]
+[15:59:27] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5]
+[15:59:27] [Server thread/INFO]: [menuproof] menuproof: use_item: window 1 back_mod_menu_slots(Held x27) = Ok(())
+[15:59:27] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[15:59:28] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [0=minecraft:stone x64, 4=minecraft:dirt x5]; menu slots [0=minecraft:stone x64, 4=minecraft:dirt x5]
+[15:59:28] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[15:59:28] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:28] [Server thread/INFO]: [menuproof] menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]
+[15:59:28] [Render thread/INFO]: [CHAT] menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]
+[15:59:29] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:29] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:29] [Server thread/INFO]: [menuproof] menuproof: use_item: window 2 back_mod_menu_slots(Held x27) = Ok(())
+[15:59:29] [Server thread/INFO]: [menuproof] menuproof: after tick: window 2 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:30] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 2 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:30] [Render thread/INFO]: [CHAT] [Guest: Set own game mode to Survival Mode]
+[15:59:31] [Render thread/INFO]: [CHAT] [Guest: Teleported Guest to 6.500000, 200.000000, 3.500000]
+[15:59:32] [Render thread/INFO]: [CHAT] [Guest: Successfully filled 9 block(s)]
+[15:59:32] [Render thread/INFO]: [CHAT] [Guest: Replaced 1 slot(s) on Guest with [Shulker Box]]
+[15:59:32] [Render thread/INFO]: [CHAT] [Guest: Replaced 1 slot(s) on Guest with [Stone]]
+[15:59:33] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5]
+[15:59:33] [Server thread/INFO]: [menuproof] menuproof: use_item: window 1 back_mod_menu_slots(Held x27) = Ok(())
+[15:59:33] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[15:59:33] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [0=minecraft:stone x64, 4=minecraft:dirt x5]; menu slots [0=minecraft:stone x64, 4=minecraft:dirt x5]
+[15:59:34] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[15:59:34] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:34] [Server thread/INFO]: [menuproof] menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]
+[15:59:34] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:35] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:35] [Server thread/INFO]: [menuproof] menuproof: use_item: window 2 back_mod_menu_slots(Held x27) = Ok(())
+[15:59:35] [Server thread/INFO]: [menuproof] menuproof: after tick: window 2 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:35] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 2 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[15:59:36] [Render thread/INFO]: [CHAT] Guest left the game

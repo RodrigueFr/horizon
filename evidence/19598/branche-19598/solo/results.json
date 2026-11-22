@@ -1,0 +1,167 @@
+{
+  "scenario": "worn-solo",
+  "tree": "<horizon>/wt-preuves-19598",
+  "commit": "3fba8b7aa1324e7e08a9f4f2e4c7e8e2f4df81fd",
+  "seconds": 13,
+  "pass": true,
+  "checks": [
+    {
+      "check": "single-player: /menuproof back opened a backed menu",
+      "pass": true,
+      "seen": [
+        [
+          "menuproof: back menu opened and backed: true"
+        ],
+        "container"
+      ]
+    },
+    {
+      "check": "single-player: the menu shows the worn box (3 dirt in its slot 2)",
+      "pass": true,
+      "seen": {
+        "2": [
+          "minecraft:dirt",
+          3
+        ]
+      }
+    },
+    {
+      "check": "single-player: a shift-click fills the box with the 64 stone",
+      "pass": true,
+      "seen": {
+        "0": [
+          "minecraft:stone",
+          64
+        ],
+        "2": [
+          "minecraft:dirt",
+          3
+        ]
+      }
+    },
+    {
+      "check": "single-player: the stone left the inventory",
+      "pass": true,
+      "seen": null
+    },
+    {
+      "check": "single-player: a pickup click on the box's own slot does nothing: the box stays in slot 17",
+      "pass": true,
+      "seen": [
+        "minecraft:shulker_box",
+        1
+      ]
+    },
+    {
+      "check": "single-player: ... the cursor stays empty and the menu open",
+      "pass": true,
+      "seen": [
+        null,
+        "container"
+      ]
+    },
+    {
+      "check": "single-player: ... and the box keeps its contents",
+      "pass": true,
+      "seen": {
+        "0": [
+          "minecraft:stone",
+          64
+        ],
+        "2": [
+          "minecraft:dirt",
+          3
+        ]
+      }
+    },
+    {
+      "check": "single-player: a shift click on the box's own slot does nothing: the box stays in slot 17",
+      "pass": true,
+      "seen": [
+        "minecraft:shulker_box",
+        1
+      ]
+    },
+    {
+      "check": "single-player: ... the cursor stays empty and the menu open",
+      "pass": true,
+      "seen": [
+        null,
+        "container"
+      ]
+    },
+    {
+      "check": "single-player: ... and the box keeps its contents",
+      "pass": true,
+      "seen": {
+        "0": [
+          "minecraft:stone",
+          64
+        ],
+        "2": [
+          "minecraft:dirt",
+          3
+        ]
+      }
+    },
+    {
+      "check": "single-player: a right click on the box's own slot does nothing: the box stays in slot 17",
+      "pass": true,
+      "seen": [
+        "minecraft:shulker_box",
+        1
+      ]
+    },
+    {
+      "check": "single-player: ... the cursor stays empty and the menu open",
+      "pass": true,
+      "seen": [
+        null,
+        "container"
+      ]
+    },
+    {
+      "check": "single-player: ... and the box keeps its contents",
+      "pass": true,
+      "seen": {
+        "0": [
+          "minecraft:stone",
+          64
+        ],
+        "2": [
+          "minecraft:dirt",
+          3
+        ]
+      }
+    },
+    {
+      "check": "single-player: removing the box from its place closes the menu",
+      "pass": true,
+      "seen": [
+        [
+          "menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())"
+        ],
+        "playing"
+      ]
+    },
+    {
+      "check": "single-player: the back slot is empty afterwards",
+      "pass": true,
+      "seen": [
+        "menuproof: hand [no box there]; back [no box there]"
+      ]
+    },
+    {
+      "check": "single-player: the box, with its contents, is in inventory slot 26",
+      "pass": true,
+      "seen": [
+        {
+          "components": "{\"minecraft:container\":[{item:{count:64,id:\"minecraft:stone\"},slot:0},{item:{count:3,id:\"minecraft:dirt\"},slot:2}]}",
+          "count": 1,
+          "item": "minecraft:shulker_box",
+          "slot": 26
+        }
+      ]
+    }
+  ]
+}

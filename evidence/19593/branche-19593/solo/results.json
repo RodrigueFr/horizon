@@ -1,0 +1,93 @@
+{
+  "scenario": "held-solo",
+  "tree": "<horizon>/wt-preuves-19593",
+  "commit": "9abed3664e794cffbfcff4e72a6dbdd65c7157e6",
+  "seconds": 14,
+  "pass": true,
+  "checks": [
+    {
+      "check": "single-player: the menu opened from use_item",
+      "pass": true,
+      "seen": "container"
+    },
+    {
+      "check": "single-player: after the turn the menu shows the box (5 dirt in its slot 4)",
+      "pass": true,
+      "seen": {
+        "4": [
+          "minecraft:dirt",
+          5
+        ]
+      }
+    },
+    {
+      "check": "single-player: a shift-click moves the 64 stone into the box",
+      "pass": true,
+      "seen": {
+        "0": [
+          "minecraft:stone",
+          64
+        ],
+        "4": [
+          "minecraft:dirt",
+          5
+        ]
+      }
+    },
+    {
+      "check": "single-player: the stone left the inventory",
+      "pass": true,
+      "seen": null
+    },
+    {
+      "check": "single-player: a pickup click moves the stone on to the box's slot 9",
+      "pass": true,
+      "seen": {
+        "4": [
+          "minecraft:dirt",
+          5
+        ],
+        "9": [
+          "minecraft:stone",
+          64
+        ]
+      }
+    },
+    {
+      "check": "single-player: the cursor is empty",
+      "pass": true,
+      "seen": null
+    },
+    {
+      "check": "single-player: the server's box holds it (menuproof show)",
+      "pass": true,
+      "seen": [
+        "menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]"
+      ]
+    },
+    {
+      "check": "single-player: closed, the box is still in the hand",
+      "pass": true,
+      "seen": {
+        "components": "{\"minecraft:container\":[{item:{count:5,id:\"minecraft:dirt\"},slot:4},{item:{count:64,id:\"minecraft:stone\"},slot:9}]}",
+        "count": 1,
+        "item": "minecraft:shulker_box",
+        "slot": 0
+      }
+    },
+    {
+      "check": "single-player: reopened, the box kept the stone and the dirt",
+      "pass": true,
+      "seen": {
+        "4": [
+          "minecraft:dirt",
+          5
+        ],
+        "9": [
+          "minecraft:stone",
+          64
+        ]
+      }
+    }
+  ]
+}

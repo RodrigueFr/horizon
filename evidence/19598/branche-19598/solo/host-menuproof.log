@@ -1,0 +1,13 @@
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: opening the Worn box menu; the box holds [2=minecraft:dirt x3]
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: window 1 back_mod_menu_slots(Worn x27) = Err(NoPlayerOrWindow)
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: /menuproof back: refused inside the turn; backing window 1 again after the tick
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: back menu opened and backed: true
+[16:04:51] [Render thread/INFO]: [CHAT] menuproof: back menu opened and backed: true
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after the tick: window 1 back_mod_menu_slots(Worn x27) = Some(Ok(()))
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [2=minecraft:dirt x3]; menu slots [2=minecraft:dirt x3]
+[16:04:51] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Worn) box [0=minecraft:stone x64, 2=minecraft:dirt x3]; menu slots [0=minecraft:stone x64, 2=minecraft:dirt x3]
+[16:04:52] [Server thread/INFO]: [menuproof] menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())
+[16:04:52] [Render thread/INFO]: [CHAT] menuproof: unequip: box moved from the back slot to inventory slot 26: Ok(())
+[16:04:52] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Worn); the box holds [no box there]
+[16:04:53] [Server thread/INFO]: [menuproof] menuproof: hand [no box there]; back [no box there]
+[16:04:53] [Render thread/INFO]: [CHAT] menuproof: hand [no box there]; back [no box there]

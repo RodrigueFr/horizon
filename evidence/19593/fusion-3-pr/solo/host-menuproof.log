@@ -1,0 +1,13 @@
+[16:10:50] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5]
+[16:10:50] [Server thread/INFO]: [menuproof] menuproof: use_item: window 1 back_mod_menu_slots(Held x27) = Ok(())
+[16:10:50] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[16:10:50] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [0=minecraft:stone x64, 4=minecraft:dirt x5]; menu slots [0=minecraft:stone x64, 4=minecraft:dirt x5]
+[16:10:50] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5]; menu slots [4=minecraft:dirt x5]
+[16:10:51] [Server thread/INFO]: [menuproof] menuproof: after tick: window 1 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[16:10:51] [Server thread/INFO]: [menuproof] menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]
+[16:10:51] [Render thread/INFO]: [CHAT] menuproof: hand [4=minecraft:dirt x5, 9=minecraft:stone x64]; back [no box there]
+[16:10:51] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 1 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[16:10:52] [Server thread/INFO]: [menuproof] menuproof: use_item: opening the Held box menu; the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[16:10:52] [Server thread/INFO]: [menuproof] menuproof: use_item: window 2 back_mod_menu_slots(Held x27) = Ok(())
+[16:10:52] [Server thread/INFO]: [menuproof] menuproof: after tick: window 2 (Held) box [4=minecraft:dirt x5, 9=minecraft:stone x64]; menu slots [4=minecraft:dirt x5, 9=minecraft:stone x64]
+[16:10:52] [Server thread/INFO]: [menuproof] menuproof: menu_closed: window 2 (Held); the box holds [4=minecraft:dirt x5, 9=minecraft:stone x64]
