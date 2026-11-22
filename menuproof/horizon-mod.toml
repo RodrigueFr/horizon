@@ -1,0 +1,15 @@
+id = "menuproof"
+name = "menuproof"
+version = "0.1.0"
+description = "Test mod: mod menus backed by a box in hand (HeldItem) and a box worn in a mod place (ModItem)."
+authors = ["RodrigueFr"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+# The Horizon build the mod is compiled against: a commit that has MenuSlotPlace::ModItem
+# (horizon-rust/horizon#19598). Replace it with the commit of the build you install it into.
+horizon = "cdddef069843f9cf0c70e42b24844310ab35875d"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"

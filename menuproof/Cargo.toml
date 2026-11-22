@@ -1,0 +1,17 @@
+[package]
+name = "menuproof"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "A small native test mod: mod menus backed by a box in hand (HeldItem) and a box worn in a mod place (ModItem)"
+
+[lib]
+name = "menuproof"
+path = "src/lib.rs"
+
+[dependencies]
+# The SDK the mod tool fetches beside the mod (`cargo horizon-mod`), as Vast Packs has it.
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
+log = "0.4"
+
