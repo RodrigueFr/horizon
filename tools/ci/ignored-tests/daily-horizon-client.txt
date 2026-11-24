@@ -173,6 +173,7 @@ horizon-client game::native_menu_places::tests::a_write_into_the_box_is_mirrored
 horizon-client game::native_menu_places::tests::another_hotbar_slot_selected_closes_the_menu lib daily resources
 horizon-client game::native_menu_places::tests::another_stack_in_the_hand_closes_the_menu lib daily resources
 horizon-client game::native_menu_places::tests::another_stack_in_the_offhand_closes_the_menu lib daily resources
+horizon-client game::native_menu_places::tests::backing_twice_in_one_turn_queues_one_notice lib daily resources
 horizon-client game::native_menu_places::tests::the_player_backs_their_menu_from_their_own_turn lib daily resources
 horizon-client game::native_menu_places::tests::un_backing_or_shortening_empties_the_mirrored_slots_and_keeps_the_items_once lib daily resources
 horizon-client game::native_menus::tests::a_menus_items_are_replaced_in_one_packet_without_reopening lib daily resources

@@ -128,7 +128,7 @@ impl Game<'_> {
         let conn = self
             .native_conn(uuid)
             .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?;
-        let (size, slots, shown) = self
+        let (size, slots, hides_none) = self
             .lan
             .as_ref()
             .and_then(|lan| lan.hub.guest(conn)?.menu.as_ref())
@@ -140,12 +140,13 @@ impl Game<'_> {
         if slots != Slots::Native {
             return Err(MenuSlotBackRefusal::UnsupportedMenu);
         }
+        // Only a block's menu hides slots (`hide_menu_slots`), so this one hides none, and
+        // `menu` below (which refuses a menu that hides slots) never refuses it for that.
+        debug_assert!(hides_none, "a blockless mod menu hides no slots");
         // The menu as mods read it. During the player's turn `menu` refuses them (their state
         // is swapped out), so the record's open menu above stands for it.
         let menu = if acting {
-            shown
-                .then_some(None)
-                .ok_or(MenuSlotBackRefusal::NoPlayerOrWindow)?
+            None
         } else {
             Some(
                 self.menu(uuid, window)
@@ -199,6 +200,10 @@ impl Game<'_> {
         // During the turn the mirror can't be read, so its first fill is a change notice, taken
         // after the turn (`run_native_menu_events`) with nobody swapped in.
         let defer = count > 0 && menu.is_none();
+        // A notice for this window already queued looks at the new backing too.
+        let queued = entry
+            .as_ref()
+            .is_some_and(|old| old.window == window && old.noticed);
         *entry = (count > 0).then_some(MenuSlotPlaces {
             window,
             places,
@@ -207,7 +212,7 @@ impl Game<'_> {
             mod_bound,
             noticed: defer,
         });
-        if defer {
+        if defer && !queued {
             lan.hub
                 .native_menu_events
                 .push(NativeMenuEvent::PlacesChanged { uuid, window });
@@ -886,6 +891,29 @@ mod tests {
             assert!(game.place_menu_click(123, window, 27, 0, 1));
             let host: &mut dyn ServerHost = game;
             assert_eq!((held_slot(4).amount(host), held_slot(0).amount(host)), (64, 5));
+        });
+    }
+
+    #[test]
+    #[ignore = "daily"]
+    fn backing_twice_in_one_turn_queues_one_notice() {
+        with_game(|game| {
+            let window = backpack_menu(game);
+            let host: &mut dyn ServerHost = game;
+            let player = host.menu(123, window).unwrap().fields().player;
+            let backed = game.as_guest(1, |game| {
+                let first =
+                    game.player_back_mod_menu_slots(player, window, held_places(Hand::Main, 0..27));
+                let second =
+                    game.player_back_mod_menu_slots(player, window, held_places(Hand::Main, 0..27));
+                (first, second)
+            });
+            assert_eq!(backed, Some((Ok(()), Ok(()))));
+            let notices = game.lan.as_ref().unwrap().hub.native_menu_events.iter();
+            let changed = notices
+                .filter(|event| matches!(event, NativeMenuEvent::PlacesChanged { .. }))
+                .count();
+            assert_eq!(changed, 1);
         });
     }
 
