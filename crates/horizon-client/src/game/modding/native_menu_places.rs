@@ -78,15 +78,23 @@ fn mod_places_bound(
 }
 
 /// The inventory slot holding `hand`'s stack (the selected hotbar slot, or the offhand's 40) and
-/// that stack, of `guest`.
-fn held_by(guest: &Guest, hand: Hand) -> (usize, Option<&ItemStack>) {
+/// that stack, of the hands `inventory`, `offhand` and `selected`: a guest's record, or the
+/// level's during that player's turn.
+fn held_in<'a>(
+    inventory: &'a [Option<ItemStack>],
+    offhand: Option<&'a ItemStack>,
+    selected: usize,
+    hand: Hand,
+) -> (usize, Option<&'a ItemStack>) {
     match hand {
-        Hand::Off => (40, guest.offhand.as_ref()),
-        _ => (
-            guest.selected,
-            guest.inventory.get(guest.selected).and_then(Option::as_ref),
-        ),
+        Hand::Off => (40, offhand),
+        _ => (selected, inventory.get(selected).and_then(Option::as_ref)),
     }
+}
+
+/// [`held_in`] of `guest`'s record.
+fn held_by(guest: &Guest, hand: Hand) -> (usize, Option<&ItemStack>) {
+    held_in(&guest.inventory, guest.offhand.as_ref(), guest.selected, hand)
 }
 
 impl Game<'_> {
@@ -113,13 +121,10 @@ impl Game<'_> {
         let mut held = [None, None];
         for place in &places {
             if let MenuSlotPlace::HeldItem { hand, .. } = *place {
-                let (index, stack) = match (acting, hand) {
-                    (false, _) => held_by(guest, hand),
-                    (true, Hand::Off) => (40, self.offhand.as_ref()),
-                    (true, _) => (
-                        self.selected,
-                        self.inventory.get(self.selected).and_then(Option::as_ref),
-                    ),
+                let (index, stack) = if acting {
+                    held_in(&self.inventory, self.offhand.as_ref(), self.selected, hand)
+                } else {
+                    held_by(guest, hand)
                 };
                 held[usize::from(hand == Hand::Off)] = stack.map(|s| (index, held_identity(s)));
             }
@@ -892,6 +897,19 @@ mod tests {
             let host: &mut dyn ServerHost = game;
             assert_eq!((held_slot(4).amount(host), held_slot(0).amount(host)), (64, 5));
         });
+    }
+
+    #[test]
+    fn the_held_hands_are_the_selected_slot_and_the_offhand_40() {
+        let mut inventory = vec![None; 41];
+        inventory[3] = Some(ItemStack::new("minecraft:shulker_box", 1));
+        let offhand = ItemStack::new("minecraft:stone", 1);
+        let item = |held: (usize, Option<&ItemStack>)| (held.0, held.1.map(|s| s.item.to_string()));
+        let main = item(held_in(&inventory, Some(&offhand), 3, Hand::Main));
+        assert_eq!(main, (3, Some("minecraft:shulker_box".to_string())));
+        let off = item(held_in(&inventory, Some(&offhand), 3, Hand::Off));
+        assert_eq!(off, (40, Some("minecraft:stone".to_string())));
+        assert_eq!(item(held_in(&inventory, None, 5, Hand::Main)), (5, None));
     }
 
     #[test]
