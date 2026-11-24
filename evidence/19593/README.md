@@ -18,6 +18,7 @@ rouvrir, contenu gardé.
 | `fusion-3-pr/solo` | `preuves/all` = fusion #19593+#19595+#19598 (cdddef0698) + mod, 6868bdaf8e | `--scenario held-solo` | 9/9 OK |
 | `fusion-3-pr/lan-hote-et-invite` | idem | `--scenario held-lan` | 18/18 OK |
 | `temoin-sans-19593/solo` | `preuves/19598` = 692eaa9625 (sans #19593) + mod, 3fba8b7aa1 | `--scenario held-solo` | **échoue, attendu** : `back_mod_menu_slots(Held x27) = Err(NoPlayerOrWindow)` |
+| `branche-19593-v2/lan-hote-et-invite` (24/11, après la revue) | tête e854881ead (fusion de main 7f937901a2 + points 1 et 2 de la revue) + mod complet (avec ModItem), 3135ea34e9 | `--scenario held-lan` (hôte LAN puis son invité) | 18/18 OK |
 
 Commande exacte (worktree et binaires au choix) :
 
