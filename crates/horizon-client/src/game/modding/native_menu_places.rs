@@ -97,6 +97,20 @@ fn held_by(guest: &Guest, hand: Hand) -> (usize, Option<&ItemStack>) {
     held_in(&guest.inventory, guest.offhand.as_ref(), guest.selected, hand)
 }
 
+/// Puts `new` in `entry`, a connection's backing, and says whether to queue a change notice for
+/// it: when it waits for one (`noticed`) and `entry` was not already waiting for one on that
+/// window, which looks at the new backing too.
+fn replace_backing(entry: &mut Option<MenuSlotPlaces>, new: Option<MenuSlotPlaces>) -> bool {
+    let notice = new.as_ref().is_some_and(|new| {
+        new.noticed
+            && !entry
+                .as_ref()
+                .is_some_and(|old| old.window == new.window && old.noticed)
+    });
+    *entry = new;
+    notice
+}
+
 impl Game<'_> {
     /// `player_back_mod_menu_slots`: backs `window`'s first container slots with `places`. An
     /// empty list takes the backing away; a slot no longer backed is emptied, so the copy it
@@ -145,9 +159,13 @@ impl Game<'_> {
         if slots != Slots::Native {
             return Err(MenuSlotBackRefusal::UnsupportedMenu);
         }
-        // Only a block's menu hides slots (`hide_menu_slots`), so this one hides none, and
-        // `menu` below (which refuses a menu that hides slots) never refuses it for that.
+        // Only a block's menu hides slots (`hide_menu_slots`), so this one hides none. Should
+        // one ever hide some, refuse it as `menu` below would, in release builds too, rather
+        // than back a menu mods could not read.
         debug_assert!(hides_none, "a blockless mod menu hides no slots");
+        if !hides_none {
+            return Err(MenuSlotBackRefusal::NoPlayerOrWindow);
+        }
         // The menu as mods read it. During the player's turn `menu` refuses them (their state
         // is swapped out), so the record's open menu above stands for it.
         let menu = if acting {
@@ -205,11 +223,7 @@ impl Game<'_> {
         // During the turn the mirror can't be read, so its first fill is a change notice, taken
         // after the turn (`run_native_menu_events`) with nobody swapped in.
         let defer = count > 0 && menu.is_none();
-        // A notice for this window already queued looks at the new backing too.
-        let queued = entry
-            .as_ref()
-            .is_some_and(|old| old.window == window && old.noticed);
-        *entry = (count > 0).then_some(MenuSlotPlaces {
+        let new = (count > 0).then_some(MenuSlotPlaces {
             window,
             places,
             locked,
@@ -217,7 +231,7 @@ impl Game<'_> {
             mod_bound,
             noticed: defer,
         });
-        if defer && !queued {
+        if replace_backing(entry, new) {
             lan.hub
                 .native_menu_events
                 .push(NativeMenuEvent::PlacesChanged { uuid, window });
@@ -910,6 +924,34 @@ mod tests {
         let off = item(held_in(&inventory, Some(&offhand), 3, Hand::Off));
         assert_eq!(off, (40, Some("minecraft:stone".to_string())));
         assert_eq!(item(held_in(&inventory, None, 5, Hand::Main)), (5, None));
+    }
+
+    #[test]
+    fn a_waiting_backing_queues_a_notice_once_per_window() {
+        let backing = |window, noticed| {
+            Some(MenuSlotPlaces {
+                window,
+                places: held_places(Hand::Main, 0..27),
+                locked: Some(0),
+                held: [None, None],
+                mod_bound: Vec::new(),
+                noticed,
+            })
+        };
+        let mut entry = None;
+        // A turn's first backing waits for a notice: one is queued.
+        assert!(replace_backing(&mut entry, backing(1, true)));
+        // A second one in the same turn: the queued notice looks at it too.
+        assert!(!replace_backing(&mut entry, backing(1, true)));
+        // Another window waits for its own.
+        assert!(replace_backing(&mut entry, backing(2, true)));
+        // A backing outside the turn fills the mirror itself, and takes the backing away.
+        assert!(!replace_backing(&mut entry, backing(2, false)));
+        assert!(!replace_backing(&mut entry, None));
+        assert!(entry.is_none());
+        // Once the notice is taken (`noticed` cleared), the next turn's backing queues again.
+        entry = backing(1, false);
+        assert!(replace_backing(&mut entry, backing(1, true)));
     }
 
     #[test]
